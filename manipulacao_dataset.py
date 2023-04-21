@@ -99,4 +99,4 @@ df.loc[((df['style']=='White')|(df['style']=='Rose')) & (df['date'].dt.month.isi
 df['sub-total'] = df['price']*df['quantity']
 fat = df.loc[df["date"].dt.month<4]['sub-total'].sum()
 fat
-fat
+
