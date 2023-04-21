@@ -1,7 +1,5 @@
-
-Nosso CEO deseja saber algumas informações sobre o faturamento de vinhos. A equipe de vendas nos forneceu um dataset com alguns dados e precisamos extrair algumas informações para respondermos as questões
-
-
+#Codigo feito em modelo google colab notebook
+#Nosso CEO deseja saber algumas informações sobre o faturamento de vinhos. A equipe de vendas nos forneceu um dataset com alguns dados e precisamos extrair algumas informações para respondermos as questões
 
 import pandas as pd
 
@@ -67,10 +65,6 @@ df['vintage'].max()
 
 ### 11. Qual país teve mais garrafas vendidas?
 
-> Bloco com recuo
-
-
-
 df.groupby('country')['quantity'].sum().sort_values(ascending=False).reset_index()[:1]
 
 ### 12. Qual país teve menos menos garrafa vendida?
@@ -91,12 +85,12 @@ df['date'] = pd.to_datetime(df['date'])
 
 df.loc[(df['style']=='Sparkling') & (df['date'].dt.month==12)]['quantity'].sum()
 
-### 16. Quantos vinhos brancos e rosés
+#16. Quantos vinhos brancos e rosés
 
-1.   Item - brancos
-2.   Item - rosés
+#1.   Item - brancos
+#2.   Item - rosés
 
-foram vendidos nos meses de Janeiro à Março?
+#foram vendidos nos meses de Janeiro à Março?
 
 df.loc[((df['style']=='White')|(df['style']=='Rose')) & (df['date'].dt.month.isin([1,2,3]))]['quantity'].sum()
 
@@ -104,4 +98,5 @@ df.loc[((df['style']=='White')|(df['style']=='Rose')) & (df['date'].dt.month.isi
 
 df['sub-total'] = df['price']*df['quantity']
 fat = df.loc[df["date"].dt.month<4]['sub-total'].sum()
+fat
 fat
